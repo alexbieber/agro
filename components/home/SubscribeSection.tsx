@@ -9,7 +9,6 @@ export default function SubscribeSection() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Placeholder: wire to your newsletter API or mailto
     if (email) {
       window.location.href = `mailto:nandiagrotech363@gmail.com?subject=Subscribe%20for%2010%25%20off&body=Please%20subscribe%20me%20for%2010%25%20off.%20Email%3A%20${encodeURIComponent(email)}`;
     }

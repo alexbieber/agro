@@ -128,7 +128,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-8 sm:flex-row text-sm opacity-90">
-          <p>© 2024 Nandi Agrotech. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Nandi Agrotech. All rights reserved.</p>
           <p className="flex items-center gap-2">
             Orders & Enquiries via WhatsApp
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex text-whatsapp" aria-label="WhatsApp">

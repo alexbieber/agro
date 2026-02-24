@@ -71,9 +71,6 @@ export default function Header() {
             >
               Become a Distributor
             </Link>
-            <span className="flex items-center gap-1">
-              Language: EN <span className="opacity-70">/ हिं</span>
-            </span>
           </div>
         </div>
       </div>

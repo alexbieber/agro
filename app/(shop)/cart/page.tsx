@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/contexts/CartContext";
+import { useOrderHistory } from "@/hooks/useOrderHistory";
 import { products } from "@/lib/data/products";
 import { productImages } from "@/lib/data/productImages";
 import { ORDER_WHATSAPP_NUMBER, SITE_URL } from "@/lib/config";
@@ -12,10 +13,11 @@ import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import OrderFormModal from "@/components/shared/OrderFormModal";
 
-const FALLBACK_IMG = "/og.png";
+const FALLBACK_IMG = "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandi+Agrotech";
 
 export default function CartPage() {
   const { items, updateQuantity, removeFromCart, clearCart, cartCount } = useCart();
+  const { addOrder } = useOrderHistory();
   const [showOrderModal, setShowOrderModal] = useState(false);
 
   const cartProducts = useMemo(() => {
@@ -26,6 +28,12 @@ export default function CartPage() {
   }, [items]);
 
   const placeOrderWhatsApp = (customer: Parameters<typeof buildCartOrderWithCustomerURL>[0]["customer"]) => {
+    const productsSummary = cartProducts
+      .map(({ product, quantity }) => `${product.name} (${product.sku}) x ${quantity}`)
+      .join(", ");
+    const amount = cartProducts.reduce((sum, { product, quantity }) => sum + (product.price > 0 ? product.price * quantity : 0), 0);
+    addOrder(productsSummary, amount);
+
     const payload = cartProducts.map(({ product, quantity }) => ({
       name: product.name,
       quantity,

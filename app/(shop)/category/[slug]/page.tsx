@@ -25,8 +25,10 @@ export async function generateMetadata({
 
 export default function CategoryPage({
   params,
+  searchParams,
 }: {
   params: { slug: string };
+  searchParams: { sub?: string; brand?: string };
 }) {
   const { slug } = params;
   if (!VALID_SLUGS.includes(slug as ProductCategory)) notFound();
@@ -34,7 +36,23 @@ export default function CategoryPage({
   const category = categories.find((c) => c.slug === slug);
   if (!category) notFound();
 
-  const categoryProducts = products.filter((p) => p.category === slug);
+  let categoryProducts = products.filter((p) => p.category === slug);
+
+  const sub = searchParams.sub?.trim();
+  if (sub) {
+    const lower = sub.toLowerCase();
+    categoryProducts = categoryProducts.filter(
+      (p) =>
+        p.name.toLowerCase().includes(lower) ||
+        p.description.toLowerCase().includes(lower) ||
+        p.brand.toLowerCase().includes(lower)
+    );
+  }
+  const brand = searchParams.brand?.trim();
+  if (brand) {
+    categoryProducts = categoryProducts.filter((p) => p.brand.toLowerCase() === brand.toLowerCase());
+  }
+
   const categoryBrands = brands[slug as keyof typeof brands] ?? [];
 
   return (
@@ -47,6 +65,9 @@ export default function CategoryPage({
       <div className="mb-6">
         <h1 className="text-2xl font-heading font-normal text-foreground">{category.name}</h1>
         <p className="text-muted-foreground mt-1">{category.description}</p>
+        {sub && (
+          <p className="text-sm text-muted-foreground mt-2">Filtered by: {sub}</p>
+        )}
       </div>
       <CategoryPageClient
         category={category}

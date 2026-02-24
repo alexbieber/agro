@@ -49,7 +49,7 @@ export default function ProductPage({
     name: product.name,
     description: product.description,
     brand: { "@type": "Brand", name: product.brand },
-    image: productImages[product.id] || (product.images?.[0]?.startsWith("http") ? product.images[0] : `${SITE_URL}/og.png`),
+    image: productImages[product.id] || (product.images?.[0]?.startsWith("http") ? product.images[0] : "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandi+Agrotech"),
     offers: {
       "@type": "Offer",
       price: product.price,
