@@ -26,7 +26,7 @@ export default function SupportPage() {
         <a href={waUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-4">
           <Button variant="whatsapp" className="gap-2">
             <MessageCircle className="h-4 w-4" />
-            Chat with Nandi Agrotech
+            Chat with Nandee Agrotech
           </Button>
         </a>
       </div>

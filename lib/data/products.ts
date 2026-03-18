@@ -2,12 +2,12 @@ import { Product } from "@/lib/types/product";
 import type { ProductCategory } from "@/lib/types/product";
 
 /**
- * Products from Nandi Agrotech, Turuvekere - 572227.
+ * Products from Nandee Agrotech, Turuvekere - 572227.
  * Descriptions and highlights aligned with company copy: strong and reliable
  * farming equipment, trust and innovation, modern technology for a better future.
  */
 const COMPANY_DESCRIPTION =
-  "At Nandi Agrotech, we offer strong and reliable farming equipment to help increase productivity and save time. Our advanced machines and modern technology help farmers do their work more easily and effectively. We work as a partner with every farmer to support their growth. Choose Nandi Agrotech – where modern technology supports farming for a better future!";
+  "At Nandee Agrotech, we offer strong and reliable farming equipment to help increase productivity and save time. Our advanced machines and modern technology help farmers do their work more easily and effectively. We work as a partner with every farmer to support their growth. Choose Nandee Agrotech – where modern technology supports farming for a better future!";
 
 function slugFromName(name: string): string {
   return name
@@ -17,6 +17,8 @@ function slugFromName(name: string): string {
     .replace(/^-|-$/g, "");
 }
 
+const MAX_PRODUCT_IMAGES = 10;
+
 function createProduct(
   id: string,
   name: string,
@@ -25,11 +27,16 @@ function createProduct(
   typeLabel?: string
 ): Product {
   const slug = slugFromName(name);
+  const images = Array.from({ length: MAX_PRODUCT_IMAGES }, (_, i) =>
+    i === 0
+      ? `/images/products/${slug}.png`
+      : `/images/products/${slug}-${i + 1}.png`
+  );
   return {
     id,
     name,
     slug,
-    brand: "Nandi Agrotech",
+    brand: "Nandee Agrotech",
     category,
     price: 0,
     mrp: 0,
@@ -38,7 +45,7 @@ function createProduct(
     reviewCount: 0,
     sku,
     stock: 1,
-    images: [`/images/products/${slug}.jpg`],
+    images,
     description: `${typeLabel ? typeLabel + ". " : ""}${COMPANY_DESCRIPTION}`,
     cropCompatibility: [],
     isOrganic: false,

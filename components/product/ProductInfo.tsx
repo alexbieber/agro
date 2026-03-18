@@ -181,7 +181,7 @@ export default function ProductInfo({
       </div>
 
       <p className="text-sm text-text-secondary">
-        Sold by <strong>Nandi Agrotech</strong> · <span className="text-success">Verified Seller</span>
+        Sold by <strong>Nandee Agrotech</strong> · <span className="text-success">Verified Seller</span>
       </p>
 
       {product.highlights?.length ? (

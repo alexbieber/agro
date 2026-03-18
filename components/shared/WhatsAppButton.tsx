@@ -24,8 +24,8 @@ export default function WhatsAppButton({ className }: { className?: string }) {
         "before:absolute before:inset-[-4px] before:rounded-full before:border-2 before:border-whatsapp before:opacity-40 before:animate-whatsapp-pulse",
         className
       )}
-      aria-label="Chat with Nandi Agrotech on WhatsApp"
-      title="Chat with Nandi Agrotech"
+      aria-label="Chat with Nandee Agrotech on WhatsApp"
+      title="Chat with Nandee Agrotech"
     >
       <WhatsAppIcon className="h-7 w-7 relative z-10 md:h-8 md:w-8" />
     </a>

@@ -49,7 +49,15 @@ export default function ProductPage({
     name: product.name,
     description: product.description,
     brand: { "@type": "Brand", name: product.brand },
-    image: productImages[product.id] || (product.images?.[0]?.startsWith("http") ? product.images[0] : "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandi+Agrotech"),
+    image:
+        product.images?.[0] &&
+        (product.images[0].startsWith("http") ||
+          product.images[0].startsWith("/"))
+          ? product.images[0].startsWith("http")
+            ? product.images[0]
+            : `${SITE_URL}${product.images[0]}`
+          : productImages[product.id] ||
+            "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandee+Agrotech",
     offers: {
       "@type": "Offer",
       price: product.price,
@@ -91,7 +99,7 @@ export default function ProductPage({
       </div>
 
       <section className="mt-12">
-        <h2 className="text-xl font-heading font-normal text-foreground mb-4">More from Nandi Agrotech</h2>
+        <h2 className="text-xl font-heading font-normal text-foreground mb-4">More from Nandee Agrotech</h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {sameCategory.map((p) => (
             <ProductCard key={p.id} product={p} />

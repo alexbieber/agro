@@ -50,14 +50,14 @@ export default function OurVideos() {
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
-              Nandi Agrotech on YouTube
+              Nandee Agrotech on YouTube
             </Button>
           </a>
         </div>
 
         <div className="relative rounded-xl overflow-hidden border border-border bg-card shadow-sm aspect-video max-w-4xl mx-auto mb-8 min-h-[200px] sm:min-h-[280px]">
           <iframe
-            title="Nandi Agrotech YouTube channel – latest videos"
+            title="Nandee Agrotech YouTube channel – latest videos"
             src={`https://www.youtube.com/embed/videoseries?list=${YOUTUBE_UPLOADS_PLAYLIST_ID}`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -114,7 +114,7 @@ export default function OurVideos() {
         <p className="text-center text-sm text-muted-foreground">
           Can&apos;t see the player?{" "}
           <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-            Open Nandi Agrotech on YouTube
+            Open Nandee Agrotech on YouTube
           </a>
           {" "}to see all videos.
         </p>

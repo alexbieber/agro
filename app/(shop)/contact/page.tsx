@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: `Contact — ${SITE_NAME}`,
-  description: "Get in touch with Nandi Agrotech. Phone, WhatsApp, email and address in Turuvekere, Karnataka.",
+  description: "Get in touch with Nandee Agrotech. Phone, WhatsApp, email and address in Turuvekere, Karnataka.",
 };
 
 export default function ContactPage() {

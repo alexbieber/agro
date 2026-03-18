@@ -4,7 +4,7 @@ import { SITE_NAME } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: `Terms — ${SITE_NAME}`,
-  description: "Terms of use for Nandi Agrotech website and orders.",
+  description: "Terms of use for Nandee Agrotech website and orders.",
 };
 
 export default function TermsPage() {
@@ -22,7 +22,7 @@ export default function TermsPage() {
         <div className="space-y-6 text-foreground leading-relaxed">
           <section>
             <h2 className="text-xl font-heading font-normal text-foreground mb-2">Use of this site</h2>
-            <p>This website is operated by Nandi Agrotech. By using the site you agree to use it only for lawful purposes and for browsing, enquiring or ordering agricultural equipment and related products.</p>
+            <p>This website is operated by Nandee Agrotech. By using the site you agree to use it only for lawful purposes and for browsing, enquiring or ordering agricultural equipment and related products.</p>
           </section>
           <section>
             <h2 className="text-xl font-heading font-normal text-foreground mb-2">Orders and payment</h2>

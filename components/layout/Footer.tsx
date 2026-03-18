@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="bg-primary-dark text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Col 1 - Nandi Agrotech */}
+          {/* Col 1 - Nandee Agrotech */}
           <div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🌾</span>
@@ -83,7 +83,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-80 hover:opacity-100"
-                aria-label="Nandi Agrotech on YouTube"
+                aria-label="Nandee Agrotech on YouTube"
               >
                 <Youtube className="h-5 w-5" />
               </a>
@@ -116,7 +116,7 @@ export default function Footer() {
           <div>
             <h3 className="font-heading font-normal text-lg mb-3">Company</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li><Link href="/about" className="hover:underline">About Nandi Agrotech</Link></li>
+              <li><Link href="/about" className="hover:underline">About Nandee Agrotech</Link></li>
               <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
               <li><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:underline">Track Your Order</a></li>
               <li><Link href="/returns" className="hover:underline">Return Policy</Link></li>
@@ -128,7 +128,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-8 sm:flex-row text-sm opacity-90">
-          <p>© {new Date().getFullYear()} Nandi Agrotech. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Nandee Agrotech. All rights reserved.</p>
           <p className="flex items-center gap-2">
             Orders & Enquiries via WhatsApp
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex text-whatsapp" aria-label="WhatsApp">

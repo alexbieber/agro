@@ -13,7 +13,7 @@ export function buildWhatsAppURL({
   quantity: number;
   sku?: string;
 }) {
-  const message = `Hello Nandi Agrotech! I'm interested in ordering the following product:\n\n🌱 *Product:* ${productName}\n💰 *Price:* ₹${price}\n📦 *Quantity:* ${quantity}\n${sku ? `🔖 *SKU:* ${sku}\n` : ""}🔗 *Link:* ${productUrl}\n\nPlease confirm availability and delivery details. Thank you!`;
+  const message = `Hello Nandee Agrotech! I'm interested in ordering the following product:\n\n🌱 *Product:* ${productName}\n💰 *Price:* ₹${price}\n📦 *Quantity:* ${quantity}\n${sku ? `🔖 *SKU:* ${sku}\n` : ""}🔗 *Link:* ${productUrl}\n\nPlease confirm availability and delivery details. Thank you!`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
@@ -26,12 +26,12 @@ export function buildEnquiryURL({
   productName: string;
   productUrl: string;
 }) {
-  const message = `Hello Nandi Agrotech! I have a question about:\n\n🌱 *Product:* ${productName}\n🔗 *Link:* ${productUrl}\n\nCould you please share more details?`;
+  const message = `Hello Nandee Agrotech! I have a question about:\n\n🌱 *Product:* ${productName}\n🔗 *Link:* ${productUrl}\n\nCould you please share more details?`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
 export function buildDistributorURL({ phone }: { phone: string }) {
-  const message = `Hello Nandi Agrotech! I'm interested in becoming a distributor/dealer for your products. Please share details about your distributor program.`;
+  const message = `Hello Nandee Agrotech! I'm interested in becoming a distributor/dealer for your products. Please share details about your distributor program.`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
@@ -48,7 +48,7 @@ export function buildCartOrderURL({
   const lines = items.map(
     (i) => `• ${i.name} × ${i.quantity}${i.sku ? ` (${i.sku})` : ""}\n  ${i.url}`
   );
-  const message = `Hello Nandi Agrotech! I would like to place an order:\n\n${lines.join("\n\n")}\n\nPlease confirm availability and total amount. Thank you!`;
+  const message = `Hello Nandee Agrotech! I would like to place an order:\n\n${lines.join("\n\n")}\n\nPlease confirm availability and total amount. Thank you!`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
@@ -156,6 +156,6 @@ export function buildBulkOrderURL({
   date: string;
   notes: string;
 }) {
-  const message = `Hello Nandi Agrotech! Bulk Order Request:\n\n🏢 *Organization:* ${organization}\n📦 *Product:* ${product}\n🔢 *Quantity:* ${quantity}\n📅 *Required by:* ${date}\n📍 *Location:* ${state} - ${pincode}\n📝 *Notes:* ${notes}\n\nPlease send a quote. Thank you!`;
+  const message = `Hello Nandee Agrotech! Bulk Order Request:\n\n🏢 *Organization:* ${organization}\n📦 *Product:* ${product}\n🔢 *Quantity:* ${quantity}\n📅 *Required by:* ${date}\n📍 *Location:* ${state} - ${pincode}\n📝 *Notes:* ${notes}\n\nPlease send a quote. Thank you!`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

@@ -30,7 +30,7 @@ export default function SellerLayout({
     <div className="flex min-h-screen">
       <aside className="w-64 shrink-0 border-r border-border bg-card p-4">
         <Link href="/seller/dashboard" className="flex items-center gap-2 font-bold text-primary mb-6">
-          Nandi Agrotech Admin
+          Nandee Agrotech Admin
         </Link>
         <nav className="space-y-1">
           {nav.map((item) => (

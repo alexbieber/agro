@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: `Return Policy — ${SITE_NAME}`,
-  description: "Return and refund policy for Nandi Agrotech. Contact us on WhatsApp for returns and replacements.",
+  description: "Return and refund policy for Nandee Agrotech. Contact us on WhatsApp for returns and replacements.",
 };
 
 export default function ReturnsPage() {

@@ -1,6 +1,6 @@
-# 🌱 Nandi Agrotech — WhatsApp-First E-Commerce Platform
+# 🌱 Nandee Agrotech — WhatsApp-First E-Commerce Platform
 
-Production-ready Next.js 14 e-commerce website for Nandi Agrotech — an Indian agriculture company selling Seeds, Organic Farming Products, Irrigation Systems, and Farm Machinery.
+Production-ready Next.js 14 e-commerce website for Nandee Agrotech — an Indian agriculture company selling Seeds, Organic Farming Products, Irrigation Systems, and Farm Machinery.
 
 ## Tech Stack
 
@@ -60,7 +60,7 @@ Configuration is read from **environment variables** (recommended) with fallback
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Yes (for live) | WhatsApp number, no + or spaces (e.g. `919876543210`) |
-| `NEXT_PUBLIC_SITE_NAME` | No | Site name (default: Nandi Agrotech) |
+| `NEXT_PUBLIC_SITE_NAME` | No | Site name (default: Nandee Agrotech) |
 | `NEXT_PUBLIC_SITE_URL` | No | Canonical URL for sitemap/SEO (default: https://nandiagrotech.com) |
 | `NEXT_PUBLIC_SITE_TAGLINE` | No | Tagline for meta and UI |
 | `NEXT_PUBLIC_SUPPORT_PHONE` | No | Optional landline/support number (e.g. `+91-80-XXXX-XXXX`). If set, shown on bulk-orders; otherwise a generic WhatsApp CTA is shown. |
@@ -69,7 +69,7 @@ Configuration is read from **environment variables** (recommended) with fallback
 
 ```
 NEXT_PUBLIC_WHATSAPP_NUMBER=919876543210
-NEXT_PUBLIC_SITE_NAME=Nandi Agrotech
+NEXT_PUBLIC_SITE_NAME=Nandee Agrotech
 NEXT_PUBLIC_SITE_URL=https://nandiagrotech.com
 NEXT_PUBLIC_SUPPORT_PHONE=+91-80-1234-5678
 ```

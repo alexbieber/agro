@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 import { useSavedUserDetails } from "@/hooks/useSavedUserDetails";
+import { heroImagePaths } from "@/lib/data/heroImages";
 import { heroImages } from "@/lib/data/productImages";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +12,7 @@ import { Label } from "@/components/ui/label";
 
 const BENEFITS = [
   { title: "Partnership terms", text: "Discuss margins and territory with our team on WhatsApp." },
-  { title: "Product range", text: "Full irrigation and farm machinery range from Nandi Agrotech." },
+  { title: "Product range", text: "Full irrigation and farm machinery range from Nandee Agrotech." },
   { title: "Support", text: "We back our dealers with stock and after-sales support." },
   { title: "Get in touch", text: "Submit your details and we’ll respond on WhatsApp." },
 ];
@@ -83,7 +84,7 @@ export default function DistributorPage() {
   };
 
   const handleSubmit = () => {
-    const message = `Hello Nandi Agrotech! Distributor Enquiry:\n\nBusiness: ${form.businessName}\nOwner: ${form.ownerName}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nState: ${form.state}\nDistrict: ${form.district}\nGST: ${form.gst || "N/A"}\nType: ${form.businessType}\nProducts: ${form.products.join(", ") || "N/A"}\nTurnover: ${form.turnover}\nHow did you hear: ${form.hearAbout}`;
+    const message = `Hello Nandee Agrotech! Distributor Enquiry:\n\nBusiness: ${form.businessName}\nOwner: ${form.ownerName}\nWhatsApp: ${form.whatsapp}\nEmail: ${form.email}\nState: ${form.state}\nDistrict: ${form.district}\nGST: ${form.gst || "N/A"}\nType: ${form.businessType}\nProducts: ${form.products.join(", ") || "N/A"}\nTurnover: ${form.turnover}\nHow did you hear: ${form.hearAbout}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -93,7 +94,7 @@ export default function DistributorPage() {
       {/* Hero */}
       <section className="relative bg-primary-dark text-white py-20 px-4 overflow-hidden">
         <Image
-          src={heroImages.machinery}
+          src={heroImagePaths[0] || heroImages.machinery}
           alt=""
           fill
           className="object-cover opacity-40"

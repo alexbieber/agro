@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * Lists videos from Nandi Agrotech YouTube channel (UCf5BtTEmy7osf-n4yP_LSrg).
+ * Lists videos from Nandee Agrotech YouTube channel (UCf5BtTEmy7osf-n4yP_LSrg).
  * Set YOUTUBE_API_KEY in .env.local (get one at https://console.cloud.google.com/apis/credentials)
  * to enable the video list. Without it, the section still shows the channel embed.
  */

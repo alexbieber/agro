@@ -15,7 +15,7 @@ export default function DistributorCTA() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-heading font-normal">Become a distributor</h2>
           <p className="mt-2 opacity-90">
-            Sell Nandi Agrotech products in your area. We’ll work with you on pricing and delivery.
+            Sell Nandee Agrotech products in your area. We’ll work with you on pricing and delivery.
           </p>
           <ul className="mt-4 space-y-2 text-left inline-block">
             {points.map((b) => (

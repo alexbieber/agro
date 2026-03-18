@@ -4,7 +4,7 @@ import { SITE_NAME } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: `Privacy Policy — ${SITE_NAME}`,
-  description: "Privacy policy for Nandi Agrotech. How we collect, use and protect your information.",
+  description: "Privacy policy for Nandee Agrotech. How we collect, use and protect your information.",
 };
 
 export default function PrivacyPage() {

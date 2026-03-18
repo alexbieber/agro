@@ -24,7 +24,7 @@ export default function DistributorApplicationPage() {
   });
 
   const handleSubmit = () => {
-    const message = `Hello Nandi Agrotech! Distributor Application:\n\nBusiness: ${form.businessName}\nOwner: ${form.ownerName}\nPhone: ${form.phone}\nGST: ${form.gst || "N/A"}\nState: ${form.state}\nDistrict: ${form.district}\nType: ${form.businessType}\nProducts: ${form.products.join(", ") || "N/A"}\nYears in agri: ${form.years}\nExpected monthly volume: ${form.volume}`;
+    const message = `Hello Nandee Agrotech! Distributor Application:\n\nBusiness: ${form.businessName}\nOwner: ${form.ownerName}\nPhone: ${form.phone}\nGST: ${form.gst || "N/A"}\nState: ${form.state}\nDistrict: ${form.district}\nType: ${form.businessType}\nProducts: ${form.products.join(", ") || "N/A"}\nYears in agri: ${form.years}\nExpected monthly volume: ${form.volume}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };

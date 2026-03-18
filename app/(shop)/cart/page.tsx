@@ -12,8 +12,29 @@ import { buildCartOrderWithCustomerURL } from "@/lib/utils/whatsapp";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils/formatPrice";
 import OrderFormModal from "@/components/shared/OrderFormModal";
+import type { Product } from "@/lib/types/product";
 
-const FALLBACK_IMG = "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandi+Agrotech";
+const FALLBACK_IMG = "https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=Nandee+Agrotech";
+
+function CartProductImage({ product }: { product: Product }) {
+  const primary =
+    product.images?.[0] &&
+    (product.images[0].startsWith("http") || product.images[0].startsWith("/"))
+      ? product.images[0]
+      : productImages[product.id] || FALLBACK_IMG;
+  const fallback = productImages[product.id] || FALLBACK_IMG;
+  const [src, setSrc] = useState(primary);
+  return (
+    <Image
+      src={src}
+      alt={product.name}
+      fill
+      className="object-cover"
+      sizes="80px"
+      onError={() => setSrc(fallback)}
+    />
+  );
+}
 
 export default function CartPage() {
   const { items, updateQuantity, removeFromCart, clearCart, cartCount } = useCart();
@@ -75,21 +96,13 @@ export default function CartPage() {
       <h1 className="text-2xl font-heading font-normal text-foreground mb-6">Cart ({cartCount} {cartCount === 1 ? "item" : "items"})</h1>
 
       <div className="space-y-4 mb-8">
-        {cartProducts.map(({ product, quantity }) => {
-          const img = productImages[product.id] || (product.images?.[0]?.startsWith("http") ? product.images[0] : FALLBACK_IMG);
-          return (
+        {cartProducts.map(({ product, quantity }) => (
             <div
               key={product.id}
               className="flex flex-wrap items-center gap-4 rounded-lg border border-border bg-card p-4"
             >
               <Link href={`/product/${product.id}`} className="relative h-20 w-20 shrink-0 overflow-hidden rounded-md bg-muted">
-                <Image
-                  src={img}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
+                <CartProductImage product={product} />
               </Link>
               <div className="min-w-0 flex-1">
                 <Link href={`/product/${product.id}`} className="font-medium text-text-primary hover:text-primary line-clamp-2">
@@ -128,8 +141,7 @@ export default function CartPage() {
                 Remove
               </Button>
             </div>
-          );
-        })}
+          ))}
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">

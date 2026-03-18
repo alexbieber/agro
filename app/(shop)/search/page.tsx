@@ -26,6 +26,7 @@ const MOCK_DID_YOU_MEAN: Record<string, string> = {
 function SearchContent() {
   const searchParams = useSearchParams();
   const q = searchParams.get("q") ?? "";
+  const category = searchParams.get("category") ?? "all";
   const [sort, setSort] = useState<SortOption>("relevance");
 
   const results = useMemo(() => {
@@ -33,16 +34,17 @@ function SearchContent() {
     const lower = q.toLowerCase();
     let list = products.filter(
       (p) =>
-        p.name.toLowerCase().includes(lower) ||
-        p.brand.toLowerCase().includes(lower) ||
-        p.description.toLowerCase().includes(lower) ||
-        p.category.includes(lower)
+        (p.name.toLowerCase().includes(lower) ||
+          p.brand.toLowerCase().includes(lower) ||
+          p.description.toLowerCase().includes(lower) ||
+          p.category.includes(lower)) &&
+        (category === "all" || p.category === category)
     );
-    if (sort === "price-asc") list.sort((a, b) => a.price - b.price);
-    else if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
-    else if (sort === "rating") list.sort((a, b) => b.rating - a.rating);
+    if (sort === "price-asc") list = [...list].sort((a, b) => a.price - b.price);
+    else if (sort === "price-desc") list = [...list].sort((a, b) => b.price - a.price);
+    else if (sort === "rating") list = [...list].sort((a, b) => b.rating - a.rating);
     return list;
-  }, [q, sort]);
+  }, [q, category, sort]);
 
   const didYouMean = q ? MOCK_DID_YOU_MEAN[q.toLowerCase()] : null;
 

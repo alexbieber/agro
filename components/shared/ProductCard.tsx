@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
@@ -29,10 +30,13 @@ export default function ProductCard({ product, className }: ProductCardProps) {
   const inWishlist = isInWishlist(product.id);
   const productUrl = `${SITE_URL}/product/${product.id}`;
 
-  const imgSrc =
-    product.images?.[0]?.startsWith("http")
+  const primarySrc =
+    product.images?.[0] &&
+    (product.images[0].startsWith("http") || product.images[0].startsWith("/"))
       ? product.images[0]
       : productImages[product.id] ?? FALLBACK_IMG;
+  const fallbackSrc = productImages[product.id] ?? FALLBACK_IMG;
+  const [imgSrc, setImgSrc] = useState(primarySrc);
 
   const showOrganic = product.isOrganic;
   const showBestSeller = product.isFeaturedForFarmers && !product.isOrganic;
@@ -53,6 +57,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             className="object-cover"
             sizes="(max-width: 768px) 50vw, 25vw"
             unoptimized={false}
+            onError={() => setImgSrc(fallbackSrc)}
           />
         </Link>
         {/* Badges */}

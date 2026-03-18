@@ -9,7 +9,7 @@ export const WHATSAPP_NUMBER =
 export const ORDER_WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_ORDER_WHATSAPP_NUMBER ?? "919798893573";
 export const SITE_NAME =
-  process.env.NEXT_PUBLIC_SITE_NAME ?? "Nandi Agrotech";
+  process.env.NEXT_PUBLIC_SITE_NAME ?? "Nandee Agrotech";
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://nandiagrotech.com";
 export const SITE_TAGLINE =
@@ -19,7 +19,7 @@ export const SITE_TAGLINE =
 /** Optional support/landline number shown on bulk orders etc. Leave unset to hide. */
 export const SUPPORT_PHONE = process.env.NEXT_PUBLIC_SUPPORT_PHONE ?? "";
 
-/** Nandi Agrotech YouTube channel – videos and demos. */
+/** Nandee Agrotech YouTube channel – videos and demos. */
 export const YOUTUBE_CHANNEL_URL =
   process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_URL ??
   "https://www.youtube.com/channel/UCf5BtTEmy7osf-n4yP_LSrg";

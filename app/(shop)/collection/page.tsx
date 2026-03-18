@@ -9,7 +9,7 @@ import type { ProductCategory } from "@/lib/types/product";
 
 export const metadata: Metadata = {
   title: `Collection — All Products | ${SITE_NAME}`,
-  description: "Browse our range of agricultural equipment – irrigation and farm machinery. Nandi Agrotech, Turuvekere.",
+  description: "Browse our range of agricultural equipment – irrigation and farm machinery. Nandee Agrotech, Turuvekere.",
 };
 
 const CATEGORY_FILTERS: { id: "all" | ProductCategory; label: string }[] = [

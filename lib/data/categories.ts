@@ -1,7 +1,7 @@
 import { products } from "./products";
 
 /**
- * Categories aligned with nandiagrotech.com (Nandi Agrotech, Turuvekere).
+ * Categories aligned with nandiagrotech.com (Nandee Agrotech, Turuvekere).
  * Hose pipes, water pumps (irrigation); sprayers, weeders, brush cutters, etc. (machinery).
  */
 export const categories = [

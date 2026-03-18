@@ -1,5 +1,5 @@
 /**
- * Premium Unsplash images for Nandi Agrotech.
+ * Premium Unsplash images for Nandee Agrotech.
  * All from Unsplash (unsplash.com) — free to use.
  */
 const u = (id: string, w = 800) =>

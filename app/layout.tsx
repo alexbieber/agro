@@ -22,7 +22,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Nandi Agrotech — Irrigation & Farm Machinery | Turuvekere, Karnataka",
+  title: "Nandee Agrotech — Irrigation & Farm Machinery | Turuvekere, Karnataka",
   description: "Hose pipes, sprayers, pumps and farm machinery in Turuvekere. Good prices, reliable support. Call or WhatsApp for orders and dealer enquiries.",
 };
 

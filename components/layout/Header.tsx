@@ -50,6 +50,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchCategory, setSearchCategory] = useState("all");
   const [searchFocused, setSearchFocused] = useState(false);
   const { wishlist } = useWishlist();
   const { cartCount } = useCart();
@@ -89,8 +90,16 @@ export default function Header() {
 
             {/* Search - center on desktop */}
             <div className="relative flex-1 max-w-xl mx-auto w-full">
-              <div className="flex rounded-md border border-border bg-background overflow-hidden">
-                <Select defaultValue="all">
+              <form
+                action="/search"
+                method="get"
+                className="flex rounded-md border border-border bg-background overflow-hidden"
+              >
+                <input type="hidden" name="category" value={searchCategory} />
+                <Select
+                  value={searchCategory}
+                  onValueChange={setSearchCategory}
+                >
                   <SelectTrigger className="w-[140px] shrink-0 border-0 bg-muted/50 rounded-none focus:ring-0">
                     <SelectValue placeholder="All Categories" />
                   </SelectTrigger>
@@ -104,6 +113,7 @@ export default function Header() {
                   </SelectContent>
                 </Select>
                 <Input
+                  name="q"
                   placeholder="Search hose pipes, sprayers, weeders, machinery..."
                   className="border-0 focus-visible:ring-0 rounded-none"
                   value={searchQuery}
@@ -111,18 +121,16 @@ export default function Header() {
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
                 />
-                <Link href={`/search?q=${encodeURIComponent(searchQuery)}`}>
-                  <Button
-                    type="button"
-                    size="icon"
-                    className="rounded-none bg-primary hover:bg-primary/90 shrink-0"
-                    aria-label="Search"
-                  >
-                    <Search className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-              {searchFocused && (
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="rounded-none bg-primary hover:bg-primary/90 shrink-0"
+                  aria-label="Search"
+                >
+                  <Search className="h-4 w-4" />
+                </Button>
+              </form>
+              {searchFocused && searchQuery.trim().length > 0 && (
                 <div className="absolute top-full left-0 right-0 z-50 mt-1 rounded-md border border-border bg-card py-2 shadow-lg">
                   {MOCK_SUGGESTIONS.slice(0, 5).map((s) => (
                     <Link

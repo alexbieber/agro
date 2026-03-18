@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: `About — ${SITE_NAME}`,
   description:
-    "Nandi Agrotech supplies irrigation, sprayers and farm machinery from Turuvekere. Family-run, focused on fair prices and reliable support.",
+    "Nandee Agrotech supplies irrigation, sprayers and farm machinery from Turuvekere. Family-run, focused on fair prices and reliable support.",
 };
 
 const WHY_US = [
@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* Hero – matches Offers / Distributor */}
       <section className="bg-primary-dark text-white py-14 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-heading font-normal">About Nandi Agrotech</h1>
+          <h1 className="text-3xl md:text-4xl font-heading font-normal">About Nandee Agrotech</h1>
           <p className="mt-3 text-lg opacity-90 max-w-xl mx-auto">
             Based in Turuvekere, Karnataka – irrigation, sprayers and farm machinery you can rely on.
           </p>
